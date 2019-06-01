@@ -21,10 +21,11 @@ class RegisterItemView extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(24.0),
               child: Column(
+
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(_register.dateTime.day.toString(), style: Styles.largeBoldTextStyle),
-                  Text(DateFormat('E').format(_register.dateTime), style: Styles.boldTextStyle)
+                  Text(DateFormat('MMM').format(_register.dateTime), style: Styles.boldTextStyle)
                 ],
               ),
             ),
@@ -33,8 +34,11 @@ class RegisterItemView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(_register.title, style: Styles.primaryTextStyle),
-                  Text(_register.description, style: Styles.secondaryTextStyle)
+                  Padding(
+                      padding: EdgeInsets.only(bottom: 8),
+                      child: Text(_register.title, style: Styles.primaryTextStyle, maxLines: 1)
+                  ),
+                  Text(_register.description, style: Styles.secondaryTextStyle, maxLines: 2)
                 ],
               ),
             ),
