@@ -29,6 +29,7 @@ class App extends StatelessWidget {
               cardColor: ThemeColors.white,
               bottomAppBarTheme: BottomAppBarTheme(color: ThemeColors.white, elevation: 0.0),
               iconTheme: IconThemeData(color: ThemeColors.white),
+              primaryIconTheme: IconThemeData(color: ThemeColors.white),
               primaryTextTheme: TextTheme(title: TextStyle(color: ThemeColors.white)),
           ),
           home: new HomeView(),

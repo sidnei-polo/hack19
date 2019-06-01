@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hack_19/module/register_bloc.dart';
 import 'package:hack_19/module/register_states.dart';
+import 'package:hack_19/view/new_record_view.dart';
 import 'package:hack_19/view/widget/register_item_view.dart';
 
 class HomeView extends StatefulWidget {
@@ -63,6 +64,7 @@ class _HomeViewState extends State<HomeView> {
 
   Widget _buildRegisterListWidget(RegisterLoadedState state) {
     return ListView.builder(
+      padding: EdgeInsets.only(top: 4),
       itemBuilder: (context, position) {
         return RegisterItemView(state.registers[position]);
       },
@@ -94,7 +96,12 @@ class _HomeViewState extends State<HomeView> {
         child: Icon(
             Icons.add
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => NewRecordView(), fullscreenDialog: true),
+          );
+        } ,
       ),
     );
   }

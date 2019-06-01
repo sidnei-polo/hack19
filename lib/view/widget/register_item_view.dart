@@ -12,8 +12,7 @@ class RegisterItemView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ShadowCard(
-
-      margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
+      margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4),
       child: Container(
         height: 124,
         child: Row(
@@ -21,11 +20,16 @@ class RegisterItemView extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(24.0),
               child: Column(
-
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(_register.dateTime.day.toString(), style: Styles.largeBoldTextStyle),
-                  Text(DateFormat('MMM').format(_register.dateTime), style: Styles.boldTextStyle)
+                  Text(
+                      _register.dateTime.day.toString(),
+                      style: Styles.largeBoldTextStyle
+                  ),
+                  Text(
+                      DateFormat('MMM').format(_register.dateTime),
+                      style: Styles.boldTextStyle
+                  )
                 ],
               ),
             ),
@@ -36,9 +40,17 @@ class RegisterItemView extends StatelessWidget {
                 children: [
                   Padding(
                       padding: EdgeInsets.only(bottom: 8),
-                      child: Text(_register.title, style: Styles.primaryTextStyle, maxLines: 1)
+                      child: Text(
+                          _register.title,
+                          style: Styles.primaryTextStyle,
+                          maxLines: 1
+                      )
                   ),
-                  Text(_register.description, style: Styles.secondaryTextStyle, maxLines: 2)
+                  Text(
+                      _register.description,
+                      style: Styles.secondaryTextStyle,
+                      maxLines: 2
+                  )
                 ],
               ),
             ),
