@@ -4,9 +4,7 @@ class RegisterRepository {
 
   Future<List<Register>> fetch(int page) async {
     var mockEvents = [
-      Register(description: "Problema na rodovia", dateTime: DateTime.now(), status: Status.open),
-      Register(description: "Problema na rodovia", dateTime: DateTime.now(), status: Status.open),
-      Register(description: "Problema na rodovia", dateTime: DateTime.now(), status: Status.open)
+      Register(title: "Title", description: "Problema na rodovia", dateTime: DateTime.now(), status: Status.open),
     ];
     return mockEvents;
   }

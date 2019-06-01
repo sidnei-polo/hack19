@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hack_19/module/register_bloc.dart';
 import 'package:hack_19/module/register_states.dart';
+import 'package:hack_19/view/widget/register_item_view.dart';
 
 class HomeView extends StatefulWidget {
   HomeView() : super();
@@ -40,10 +41,7 @@ class _HomeViewState extends State<HomeView> {
         title: Text("De Olho"),
       ),
       body: _buildBody(context),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        child: Icon(Icons.add),
-      ),
+      floatingActionButton: _buildFloatActionButton(context),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,// This trailing comma makes auto-formatting nicer for build methods.
     );
   }
@@ -55,7 +53,7 @@ class _HomeViewState extends State<HomeView> {
         builder: (context, state) {
           switch (state.runtimeType) {
             case RegisterLoadedState:
-              return _buildRegisterListWidget(bloc, state);
+              return _buildRegisterListWidget(state);
             default:
               return Center(child: Text('Failed to fetch'));
           }
@@ -63,14 +61,41 @@ class _HomeViewState extends State<HomeView> {
     );
   }
 
-  Widget _buildRegisterListWidget(RegisterBloc bloc, RegisterLoadedState state) {
+  Widget _buildRegisterListWidget(RegisterLoadedState state) {
     return ListView.builder(
       itemBuilder: (context, position) {
-        return Card(
-          child: Text(state.registers[position].description),
-        );
+        return RegisterItemView(state.registers[position]);
       },
       itemCount: state.registers.length,
+    );
+  }
+
+  Widget _buildFloatActionButton(BuildContext context) {
+    return Container(
+      width: 72.0,
+      height: 72.0,
+      margin: const EdgeInsets.only(top: 20),
+      decoration: new BoxDecoration(
+        shape: BoxShape.circle,
+        border: new Border.all(
+          color: Theme
+              .of(context)
+              .accentColor
+              .withAlpha(25),
+          width: 8.0,
+        ),
+      ),
+      child: new RawMaterialButton(
+        shape: new CircleBorder(),
+        elevation: 0.0,
+        fillColor: Theme
+            .of(context)
+            .accentColor,
+        child: Icon(
+            Icons.add
+        ),
+        onPressed: () {},
+      ),
     );
   }
 }
