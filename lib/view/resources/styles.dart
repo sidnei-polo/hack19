@@ -23,4 +23,10 @@ abstract class Styles {
       fontWeight: FontWeight.w300,
       color: ThemeColors.grey
   );
+
+  static const pillTextStyle = TextStyle(
+      fontSize: 12,
+      fontWeight: FontWeight.w300,
+      color: ThemeColors.white
+  );
 }

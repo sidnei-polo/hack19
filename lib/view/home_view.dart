@@ -73,7 +73,8 @@ class _HomeViewState extends State<HomeView> {
   }
 
   Widget _buildFloatActionButton(BuildContext context) {
-    return Container(
+    return
+      Container(
       width: 72.0,
       height: 72.0,
       margin: const EdgeInsets.only(top: 20),

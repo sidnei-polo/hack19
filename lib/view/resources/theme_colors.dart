@@ -13,4 +13,10 @@ abstract class ThemeColors {
   static const scaffoldBackgroundColor = Color(0xFFF8F8F8);
 
   static const shadowColor = Color(0x16000000);
+
+  static const green = Color(0xFF03A538);
+
+  static const orange = Color(0xFFDD7D05);
+
+  static const darkGrey = Color(0xFF575655);
 }
